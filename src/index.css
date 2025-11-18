@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: theme('fontFamily.sans');
+    background-color: #04152b;
+    color: #e5e7eb;
+  }
+
+  ::selection {
+    background: rgba(245, 189, 2, 0.3);
+    color: #030712;
+  }
+}
