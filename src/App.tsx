@@ -7,7 +7,6 @@ import {
   Home,
   Layout,
   MapPin,
-  MessageCircle,
   Paintbrush,
   PenTool,
   PhoneCall,
