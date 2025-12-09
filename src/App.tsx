@@ -205,7 +205,7 @@ function App() {
                 <Building2 className="text-brand.accent" />
               </div>
               <div>
-                <p className="font-heading text-lg">Mapolo BTP</p>
+                <p className="font-heading text-lg">Mapolo SA</p>
                 <p className="text-xs uppercase tracking-[0.5em] text-slate-300">
                   Construction & rénovation
                 </p>
@@ -223,9 +223,6 @@ function App() {
             className="mx-auto mt-16 max-w-4xl px-6 text-center space-y-8"
             {...fadeIn()}
           >
-            <p className="text-xs uppercase tracking-[0.6em] text-brand.accent">
-              Entreprise BTP
-            </p>
             <h1 className="font-heading text-4xl md:text-6xl">
               Construction, rénovation & expertise sur-mesure.
             </h1>
@@ -235,12 +232,6 @@ function App() {
               vivre.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="#contact"
-                className="rounded-full bg-brand.accent px-8 py-3 font-semibold text-brand.blue shadow-lg shadow-brand.accent/30 transition hover:bg-brand.accent/90"
-              >
-                Demander un devis
-              </a>
               <a
                 href="#realisations"
                 className="rounded-full border border-white/40 px-8 py-3 font-semibold text-white transition hover:border-brand.accent hover:text-brand.accent"
