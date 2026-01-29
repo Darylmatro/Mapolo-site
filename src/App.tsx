@@ -9,7 +9,7 @@ import {
   MapPin,
   Paintbrush,
   PenTool,
-  PhoneCall,
+  
   ShieldCheck,
   Wrench,
 } from "lucide-react";
@@ -206,7 +206,7 @@ function App() {
               <div>
                 <p className="font-heading text-lg">Mapolo SA</p>
                 <p className="text-xs uppercase tracking-[0.5em] text-slate-300">
-                  Construction & rénovation
+                  Construction Batiments Travaux Publics
                 </p>
               </div>
             </div>
@@ -223,12 +223,11 @@ function App() {
             {...fadeIn()}
           >
             <h1 className="font-heading text-4xl md:text-6xl">
-              Construction, rénovation & expertise sur-mesure.
+              Construction, Travaux Publics & expertise sur-mesure.
             </h1>
             <p className="text-lg text-slate-200">
-              Du gros œuvre aux finitions, Mapolo sécurise vos chantiers, pilote
-              les équipes terrain et vous livre des espaces durables, prêts à
-              vivre.
+              Mapolo sécurise vos chantiers, pilote les équipes terrain et vous
+              livre des espaces durables, prêts à vivre.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
@@ -493,10 +492,6 @@ function App() {
                 <div className="mt-3 flex flex-col gap-1 text-sm text-slate-300">
                   <span>54 rue des Artisans, 75011 Paris</span>
                   <span>Horaires : 07h00 - 20h00 / astreinte 24/7</span>
-                </div>
-                <div className="mt-4 flex items-center gap-3 text-sm text-slate-300">
-                  <PhoneCall className="h-5 w-5 text-brand.accent" />
-                  Hotline chantiers disponible en 2 sonneries.
                 </div>
               </div>
             </motion.div>
