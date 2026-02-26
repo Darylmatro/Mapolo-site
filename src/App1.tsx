@@ -4,14 +4,13 @@ import {
   Building2,
   Hammer,
   HardHat,
-  Home as HomeIcon,
   Layout,
   MapPin,
   Mail,
-  Paintbrush,
-  PenTool,
+  Menu,
   ShieldCheck,
   Wrench,
+  X,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { PhotoProvider, PhotoView } from "react-photo-view";
@@ -30,93 +29,67 @@ const heroMedia =
 
 const services = [
   {
-    title: "Maçonnerie & structures",
+    title: "Assainissement",
     description:
-      "Fondations, dalles, murs porteurs et ouvrages béton armé réalisés par nos équipes internes.",
+      "Réseaux d'eaux pluviales et usées, fossés septiques, stations de relevage et drainage pour voiries et plateformes.",
+    icon: Wrench,
+    image: "/img/assainir.jpg",
+  },
+  {
+    title: "Terrassement",
+    description:
+      "Décapage, nivellement, remblaiement et compactage pour fondations, voiries, parkings et plateformes logistiques.",
     icon: Hammer,
     image:
-      "https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80",
   },
   {
-    title: "Rénovation globale",
+    title: "Revêtement en chaussée béton",
     description:
-      "Réhabilitation intérieure / extérieure avec coordination tous corps d'état et finitions haut de gamme.",
-    icon: Paintbrush,
-    image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    title: "Toiture & couverture",
-    description:
-      "Charpente, tuiles, zinc, étanchéité et isolations thermiques conformes RE2020.",
-    icon: HomeIcon,
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    title: "Gros œuvre / Second œuvre",
-    description:
-      "Gestion complète du chantier, pilotage des sous-traitants et contrôle qualité digitalisé.",
+      "Routes, parkings et aires de circulation en béton armé ou bitumeux, finitions de qualité et durabilité optimale.",
     icon: HardHat,
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    title: "Études & plans",
-    description:
-      "Bureau d'études intégré, maquettes BIM, dimensionnement structurel et chiffrage précis.",
-    icon: PenTool,
-    image:
-      "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    title: "Maintenance & SAV",
-    description:
-      "Interventions rapides post-livraison, diagnostics structurels et mises aux normes.",
-    icon: Wrench,
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80",
+    image: "/img/beton.jpg",
   },
 ];
 
-const projectCategories = ["Tous", "Maisons", "Immeubles", "Rénovations"];
+const projectCategories = ["Tous", "Immeubles", "Rénovations"];
 
 const projects = [
   {
-    title: "Villa Horizon",
-    location: "Bordeaux",
-    category: "Maisons",
-    mediaType: "photo",
-    media:
-      "https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&w=1600&q=80",
-    description: "Maison contemporaine 320 m², ossature béton + bardage bois.",
-  },
-  {
-    title: "Résidence Lys",
-    location: "Lille",
+    title: "GDIZ BENIN",
+    location: "Cotonou",
     category: "Immeubles",
     mediaType: "photo",
-    media:
-      "https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=1600&q=80",
-    description: "Immeuble R+7 certifié HQE, 58 logements.",
+    media: "/img/Sipi.webp",
+    description:
+      "Le bâtiment principal s'étend sur trois étages plus une toiture terrasse au 4eme niveau avec une emprise au sol de 650m².",
   },
   {
-    title: "Hangar Atlas",
-    location: "Paris",
+    title: "Cour constitutionnelle",
+    location: "Cotonou",
     category: "Rénovations",
-    mediaType: "video",
-    media:
-      "https://cdn.coverr.co/videos/coverr-two-architects-on-a-building-site-4810/1080p.mp4",
-    description: "Transformation d'un hangar industriel en espaces tertiaires.",
+    mediaType: "photo",
+    media: "/img/ccour.webp",
+    description:
+      "Traveaux de rénovation des immeubles abritant les bureaux de la Cour constitutionnelle. Un bâtiment R+3 de haut standing à construire et trois bâtiment R+1 à R+2 dont un de type colonial à rénové.",
   },
   {
-    title: "Campus Arborescence",
-    location: "Nantes",
+    title: "Caisse Nationale de Sécurité Sociale (CNSS) ",
+    location: "Cotonou",
     category: "Immeubles",
     mediaType: "photo",
-    media:
-      "https://images.unsplash.com/photo-1505819426091-8697acb6d1e0?auto=format&fit=crop&w=1600&q=80",
-    description: "Bureaux hybrides, patios végétalisés, livraison 2024.",
+    media: "/img/Cnss.webp",
+    description:
+      "-	La construction d'un immeuble à grande hauteur réparti sur neuf (9) niveaux (sous-sol, rez-de-chaussée et 7 étages) couvrant une superficie totale de planchers de 5081,62 m²;(gros œuvre-revêtement-plomberie sanitaire-peinture R+7 avec sous-sol).",
+  },
+  {
+    title: "Panorama",
+    location: "Lomé",
+    category: "Immeubles",
+    mediaType: "photo",
+    media: "/img/panorama.webp",
+    description:
+      "Travaux de construction d'un Immeuble R+9 avec sous-sol à Lomé au Togo. Le projet est constitué d'une impressionnante composition du béton et est situé à proximité de la mer non loin du grand marché Assigamè dans la ville de Lomé.",
   },
 ];
 
@@ -148,12 +121,15 @@ const teamPhotos = [
 ];
 
 const galleryAssets = [
-  "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1200&q=80",
+  "/img/Sipi.webp",
+  "/img/ccour.webp",
+  "/img/Cnss.webp",
+  "/img/panorama.webp",
+  "/img/ccour2.jpg",
+  "/img/ketou.png",
+  "/img/ecole.jpg",
+  "/img/ketou2.png",
+  "/img/ecole2.png",
 ];
 
 const fadeIn = (delay = 0.1, distance = 24) => ({
@@ -198,51 +174,94 @@ const SectionTitle = ({
   </div>
 );
 
-const HomePage = () => (
-  <section className="relative overflow-hidden">
-    <video
-      className="absolute inset-0 h-full w-full object-cover opacity-35"
-      autoPlay
-      loop
-      muted
-      playsInline
-      poster="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
-    >
-      <source src={heroMedia} type="video/mp4" />
-    </video>
-    <div className="relative bg-gradient-to-b from-brand.navy/90 via-brand.blue/95 to-brand.blue py-20">
-      <motion.div
-        className="mx-auto mt-10 max-w-4xl px-6 text-center space-y-8"
-        {...fadeIn()}
-      >
-        <h1 className="font-heading text-4xl md:text-6xl">
-          Construction, Travaux Publics & expertise sur-mesure.
-        </h1>
-        <p className="text-lg text-slate-200">
-          Mapolo sécurise vos chantiers, pilote les équipes terrain et vous
-          livre des espaces durables, prêts à vivre.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-        <NavLink
-              to="/devis"
-              className="inline-flex items-center gap-2 rounded-full border border-brand.accent/60 px-4 py-2 text-xs md:text-sm font-semibold tracking-wide text-white transition hover:bg-brand.accent hover:text-brand.blue"
+const HomePage = () => {
+  const stats = [
+    { value: "15+", label: "Années d'expérience" },
+    { value: "200+", label: "Projets réalisés" },
+    { value: "50+", label: "Experts qualifiés" },
+  ];
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden h-screen flex flex-col">
+        <video
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
+        >
+          <source src={heroMedia} type="video/mp4" />
+        </video>
+        <div className="relative bg-gradient-to-b from-brand.navy/80 via-brand.blue/90 to-brand.blue flex-1 flex flex-col justify-center">
+          <motion.div
+            className="mx-auto max-w-5xl px-6 text-center space-y-4 md:space-y-6"
+            {...fadeIn()}
+          >
+            <motion.div
+              className="inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            ></motion.div>
+            <h1 className="font-heading text-4xl md:text-7xl lg:text-8xl">
+              MAPOLO SA
+            </h1>
+            <p className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+              Bâtiment & Travaux Publics — Construisons ensemble l'avenir de
+              l'Afrique
+            </p>
+            <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto">
+              Expertise reconnue en construction, rénovation et travaux routiers
+              au Bénin, Togo et dans la sous-région
+            </p>
+            <motion.div
+              className="flex flex-wrap justify-center gap-3 md:gap-4 pt-4"
+              {...fadeIn(0.2)}
             >
-              <Mail className="h-4 w-4" />
-              Demander un devis
-            </NavLink>
+              <NavLink
+                to="/realisations"
+                className="rounded-full bg-brand.accent px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold text-brand.blue transition hover:bg-brand.accent/90 hover:scale-105"
+              >
+                Voir nos réalisations
+              </NavLink>
+              <NavLink
+                to="/devis"
+                className="rounded-full border-2 border-brand.accent px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold text-white transition hover:bg-brand.accent hover:text-brand.blue hover:scale-105"
+              >
+                Demander un devis
+              </NavLink>
+            </motion.div>
+          </motion.div>
         </div>
-      </motion.div>
-    </div>
-  </section>
-);
+
+        {/* Stats Bar */}
+        <div className="relative bg-brand.navy py-6 md:py-8 border-y border-white/10">
+          <motion.div className="mx-auto max-w-6xl px-6" {...fadeIn(0.3)}>
+            <div className="grid gap-4 md:gap-6 md:grid-cols-3">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <p className="font-heading text-3xl md:text-5xl text-brand.accent">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm md:text-base text-slate-300 mt-1">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+};
 
 const ServicesPage = () => (
   <section className="mx-auto max-w-7xl px-6 space-y-12 pt-6">
-    <SectionTitle
-      eyebrow="Nos services"
-      title="Un pôle BTP complet, de l'étude au SAV."
-      subtitle="Chaque prestation combine expertise terrain, photos nettes et rapports précis pour rassurer vos clients."
-    />
+    <SectionTitle eyebrow="" title="Services" />
     <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
       {services.map((service, index) => {
         const Icon = service.icon;
@@ -284,9 +303,9 @@ const RealisationsPage = () => {
   return (
     <section className="mx-auto max-w-7xl space-y-12 px-6 pt-6">
       <SectionTitle
-        eyebrow="Réalisations"
-        title="Des chantiers livrés avec photos 4K & vidéos immersives."
-        subtitle="Activez le filtre pour naviguer entre nos maisons, immeubles ou rénovations complètes."
+        eyebrow=""
+        title="Des chantiers livrés avec photos immersives."
+        subtitle="Activez le filtre pour naviguer entre nos immeubles construits et nos rénovations complètes."
       />
       <div className="flex flex-wrap justify-center gap-3">
         {projectCategories.map((category) => (
@@ -356,9 +375,9 @@ const RealisationsPage = () => {
 const GaleriePage = () => (
   <section className="mx-auto max-w-7xl space-y-12 px-6 pt-6">
     <SectionTitle
-      eyebrow="Galerie"
+      eyebrow=""
       title="Photos nettes & prêtes pour vos comités."
-      subtitle="Lightbox intégrée grâce à react-photo-view pour zoomer sans perte."
+      subtitle=""
     />
     <PhotoProvider>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -387,9 +406,9 @@ const GaleriePage = () => (
 const AProposPage = () => (
   <section className="mx-auto max-w-7xl space-y-12 px-6 pt-6">
     <SectionTitle
-      eyebrow="À propos"
-      title="Une équipe BTP engagée et certifiée."
-      subtitle="Depuis 2008, Mapolo accompagne les maîtres d'ouvrage privés et publics en France."
+      eyebrow=""
+      title="MAPOLO SA, une équipe BTP engagée et certifiée."
+      subtitle="Depuis 2008, Mapolo accompagne les maîtres d'ouvrage privés et publics au Bénin."
     />
     <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
       <motion.div className="space-y-8" {...fadeIn(0.1, 16)}>
@@ -446,61 +465,12 @@ const DevisPage = () => {
     lieuExecution: "",
     dateDebut: "",
     delaiExecution: "",
-    // Prestations
-    prestations: [
-      { designation: "", quantite: "", prixUnitaire: "", total: "" },
-    ],
-    fraisDeplacement: "150",
-    tvaTaux: "20",
   });
-
-  const calculateTotal = () => {
-    const prestationsTotal = formData.prestations.reduce((sum, p) => {
-      const qty = parseFloat(p.quantite) || 0;
-      const prix = parseFloat(p.prixUnitaire) || 0;
-      return sum + qty * prix;
-    }, 0);
-    const frais = parseFloat(formData.fraisDeplacement) || 0;
-    const totalHT = prestationsTotal + frais;
-    const tva = (totalHT * parseFloat(formData.tvaTaux)) / 100;
-    return { totalHT, tva, totalTTC: totalHT + tva };
-  };
-
-  const addPrestation = () => {
-    setFormData({
-      ...formData,
-      prestations: [
-        ...formData.prestations,
-        { designation: "", quantite: "", prixUnitaire: "", total: "" },
-      ],
-    });
-  };
-
-  const updatePrestation = (index: number, field: string, value: string) => {
-    const updated = [...formData.prestations];
-    updated[index] = { ...updated[index], [field]: value };
-    if (field === "quantite" || field === "prixUnitaire") {
-      const qty = parseFloat(updated[index].quantite) || 0;
-      const prix = parseFloat(updated[index].prixUnitaire) || 0;
-      updated[index].total = (qty * prix).toFixed(2);
-    }
-    setFormData({ ...formData, prestations: updated });
-  };
-
-  const removePrestation = (index: number) => {
-    setFormData({
-      ...formData,
-      prestations: formData.prestations.filter((_, i) => i !== index),
-    });
-  };
-
-  const totals = calculateTotal();
 
   return (
     <section className="mx-auto max-w-7xl px-6 pt-6 pb-12">
       <motion.div className="space-y-8" {...fadeInOnMount()}>
         <SectionTitle
-          
           title="Devis"
           subtitle="Remplissez ce formulaire pour recevoir votre devis personnalisé sous 24h."
         />
@@ -681,168 +651,6 @@ const DevisPage = () => {
             </div>
           </div>
 
-          {/* Détail des prestations */}
-          <div className="space-y-4 border-b border-white/10 pb-6">
-            <div className="flex items-center justify-between">
-              <h3 className="font-heading text-2xl text-brand.accent">
-                Détail des Prestations
-              </h3>
-              <button
-                type="button"
-                onClick={addPrestation}
-                className="rounded-full bg-brand.accent px-4 py-2 text-sm font-semibold text-brand.blue transition hover:bg-brand.accent/90"
-              >
-                + Ajouter une prestation
-              </button>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="p-3 text-left text-sm font-semibold text-slate-300">
-                      Désignation
-                    </th>
-                    <th className="p-3 text-right text-sm font-semibold text-slate-300">
-                      Quantité
-                    </th>
-                    <th className="p-3 text-right text-sm font-semibold text-slate-300">
-                      Prix unitaire HT (€)
-                    </th>
-                    <th className="p-3 text-right text-sm font-semibold text-slate-300">
-                      Total HT (€)
-                    </th>
-                    <th className="p-3"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {formData.prestations.map((prestation, index) => (
-                    <tr key={index} className="border-b border-white/5">
-                      <td className="p-3">
-                        <input
-                          type="text"
-                          value={prestation.designation}
-                          onChange={(e) =>
-                            updatePrestation(
-                              index,
-                              "designation",
-                              e.target.value
-                            )
-                          }
-                          placeholder="Ex: Maçonnerie (fondations, murs porteurs)"
-                          className="w-full rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:border-brand.accent focus:outline-none"
-                        />
-                      </td>
-                      <td className="p-3">
-                        <input
-                          type="number"
-                          step="0.01"
-                          value={prestation.quantite}
-                          onChange={(e) =>
-                            updatePrestation(index, "quantite", e.target.value)
-                          }
-                          placeholder="0"
-                          className="w-full rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-right text-sm text-white placeholder:text-slate-400 focus:border-brand.accent focus:outline-none"
-                        />
-                      </td>
-                      <td className="p-3">
-                        <input
-                          type="number"
-                          step="0.01"
-                          value={prestation.prixUnitaire}
-                          onChange={(e) =>
-                            updatePrestation(
-                              index,
-                              "prixUnitaire",
-                              e.target.value
-                            )
-                          }
-                          placeholder="0.00"
-                          className="w-full rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-right text-sm text-white placeholder:text-slate-400 focus:border-brand.accent focus:outline-none"
-                        />
-                      </td>
-                      <td className="p-3 text-right text-sm font-semibold">
-                        {prestation.total || "0.00"} €
-                      </td>
-                      <td className="p-3">
-                        {formData.prestations.length > 1 && (
-                          <button
-                            type="button"
-                            onClick={() => removePrestation(index)}
-                            className="text-red-400 hover:text-red-300"
-                          >
-                            ✕
-                          </button>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                  <tr className="border-t border-white/10">
-                    <td className="p-3 font-semibold">Frais de déplacement</td>
-                    <td className="p-3 text-right">Forfait</td>
-                    <td className="p-3">
-                      <input
-                        type="number"
-                        value={formData.fraisDeplacement}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            fraisDeplacement: e.target.value,
-                          })
-                        }
-                        className="w-full rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-right text-sm text-white focus:border-brand.accent focus:outline-none"
-                      />
-                    </td>
-                    <td className="p-3 text-right font-semibold">
-                      {formData.fraisDeplacement} €
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Totaux */}
-          <div className="space-y-4 border-b border-white/10 pb-6">
-            <div className="ml-auto max-w-md space-y-3">
-              <div className="flex justify-between text-lg">
-                <span className="text-slate-300">TOTAL HT</span>
-                <span className="font-semibold">
-                  {totals.totalHT.toFixed(2)} €
-                </span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex-1">
-                  <label className="mb-1 block text-sm text-slate-300">
-                    TVA (%)
-                  </label>
-                  <select
-                    value={formData.tvaTaux}
-                    onChange={(e) =>
-                      setFormData({ ...formData, tvaTaux: e.target.value })
-                    }
-                    className="w-full rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-sm text-white focus:border-brand.accent focus:outline-none"
-                  >
-                    <option value="10">10% (Rénovation)</option>
-                    <option value="20">20% (Standard BTP)</option>
-                  </select>
-                </div>
-                <div className="flex-1">
-                  <label className="mb-1 block text-sm text-slate-300">
-                    Montant TVA
-                  </label>
-                  <div className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-right font-semibold">
-                    {totals.tva.toFixed(2)} €
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-between border-t border-white/10 pt-3 text-xl font-bold text-brand.accent">
-                <span>TOTAL TTC</span>
-                <span>{totals.totalTTC.toFixed(2)} €</span>
-              </div>
-            </div>
-          </div>
-
           {/* Bouton de soumission */}
           <div className="pt-6">
             <button
@@ -936,9 +744,11 @@ const ContactPage = () => (
 );
 
 function App1() {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
   const navItems = [
-    { label: "Home", to: "/" },
-    { label: "Nos services", to: "/services" },
+    { label: "Accueil", to: "/" },
+    { label: "Services", to: "/services" },
     { label: "Réalisations", to: "/realisations" },
     { label: "Galerie", to: "/galerie" },
     { label: "À propos", to: "/apropos" },
@@ -958,9 +768,6 @@ function App1() {
               </div>
               <div>
                 <p className="font-heading text-base md:text-lg">Mapolo SA</p>
-                <p className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-slate-300">
-                  Construction Batiments Travaux Publics
-                </p>
               </div>
             </div>
 
@@ -983,8 +790,57 @@ function App1() {
               ))}
             </div>
 
-            
+            {/* Bouton hamburger (mobile) */}
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 p-2 text-white hover:border-brand.accent hover:text-brand.accent focus:outline-none focus:ring-2 focus:ring-brand.accent md:hidden"
+              aria-label={isMobileNavOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              onClick={() => setIsMobileNavOpen((open) => !open)}
+            >
+              {isMobileNavOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
           </nav>
+          {/* Menu mobile */}
+          {isMobileNavOpen && (
+            <div className="border-t border-white/10 bg-brand.navy/95 px-6 pb-4 pt-2 md:hidden">
+              <div className="flex items-center justify-between pb-2">
+                <p className="text-xs uppercase tracking-[0.3em] text-slate-300">
+                  Navigation
+                </p>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 p-1.5 text-white hover:border-brand.accent hover:text-brand.accent focus:outline-none focus:ring-2 focus:ring-brand.accent"
+                  aria-label="Fermer le menu"
+                  onClick={() => setIsMobileNavOpen(false)}
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+              <div className="flex flex-col gap-1">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }: { isActive: boolean }) =>
+                      `block rounded-2xl px-4 py-2.5 text-sm font-medium transition ${
+                        isActive
+                          ? "bg-brand.accent text-brand.blue"
+                          : "text-slate-100 hover:bg-white/5 hover:text-brand.accent"
+                      }`
+                    }
+                    end={item.to === "/"}
+                    onClick={() => setIsMobileNavOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          )}
         </header>
 
         <main className="flex-1 bg-brand.blue pt-24 pb-20">
@@ -1001,8 +857,8 @@ function App1() {
 
         <footer className="border-t border-white/10 bg-brand.navy py-8 text-center text-sm text-slate-400">
           <p>
-            © {new Date().getFullYear()} Mapolo BTP — Construction, rénovation
-            & expertise.
+            © {new Date().getFullYear()} Mapolo BTP — Construction, rénovation &
+            expertise.
           </p>
         </footer>
       </div>
